@@ -12,7 +12,7 @@ class Strategy():
             #( "market", market.Market, "The market to make trades on"
         }
         
-    def __init__(self, *args, **kwargs):
+    def __init__(self, **kwargs):
         #copy arbitrary params the the object
         parameters=self.get_parameters()
         for p in parameters:
@@ -51,8 +51,8 @@ class Strategy():
     
     def _get_last_run_ts(self):
         return history.StrategyRunHistory(self).get_last_run_time()
-        
     
     
     def __str__(self):
         return self.__class__.__name__
+    

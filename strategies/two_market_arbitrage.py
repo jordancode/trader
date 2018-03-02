@@ -1,22 +1,30 @@
 from models import strategy
+from models import market
 
-class Arbitrage(strategy.Strategy):
+class Two_Market_Arbitrage(strategy.Strategy):
     
     @classmethod
     def get_parameters(cls):
         return [
             ("max_trade_amount", float, "Max amount of currency to trade in Bitcoin to mitigate risk."),
             ("min_profit_margin", float, "Minimum ratio of profit to trigger trade."),
-            ("exchanges", float, "Only arbitrage on these exchanges. If None, use any exchange"),
-            ("markets", float, "Only arbitrage on these markets. If None, use any market"),
+            ("markets", list(market.Market), "Market pair to arbitrage"),
         ]
         
     
     def _do_run(self):
-        
-        # if we haven't purchased any of the desired currency in the desired
-        # market within interval ts
         pass
+        
+        
+        
+        
+        
+    def get_arbitrage_opportunities(self):
+        m1 = self.markets[0]
+        m2 = self.markets[1]
+        
+        if m1.
+    
     
     
     def _get_key(self):
